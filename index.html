@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>One Plus One</title>
+    <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="mainStyles.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
+  </head>
+
+
+  <body>
+
+    <div id = 'overlay'>
+
+        <div id = 'menu' class = 'd-flex align-items-center justify-content-center flex-column'>
+            <p id ='expand'>Expand / Collapse</p>
+
+            <div id = 'dropDown' class = 'd-flex flex-column align-items-center'>
+                
+                    <div id = 'progressBarOutline'>
+                        <div id = 'progressBar'></div>
+                    </div>
+
+                    <div id = 'topMenuButtons' class = 'd-flex justify-content-between'>
+                        <button id = 'pause' class = 'btn btn-outline-dark ms-2  m-2'>Pause</button>
+                        <button id = 'exit' class = 'btn btn-outline-dark ms-2 m-2'>Exit</button>
+                    </div>
+                    
+                    <button id = 'next' class = 'btn btn-outline-dark ms-2  m-2'>Next Image</button>
+                
+            </div>
+        </div>
+        
+
+
+        <div class="row justify-content-center">
+            <div class="col col-10 align-self-center">
+                <div class = 'd-flex justify-content-center align-items-center'>
+                    <img id = 'mainImg' src="" alt="">
+                </div>
+            </div>
+           <img src="" id ='preloader' alt="">
+        </div>
+     
+      
+    </div>
+
+   
+
+
+    <div id ="dashBoard" class="row justify-content-center align-items-center" >
+        <div id = 'mainCol' class="col col-lg-6">
+            <div id = 'dashBoardFlex' class = "d-flex flex-column align-items-center " >
+
+                <div class="d-flex justify-content-between dashBoardRow" >
+                        <button id = 'start' class = 'btn btn-outline-dark w-25 me-2'>Start Drawing</button>
+            
+                        <div class="input-group ">
+                            <div class="input-group-text">Time per picture (mins)</div>
+                            <input type="number"class = 'form-control' id = 'time'>
+                        </div>
+                </div>
+                
+                <div class="d-flex flex-row justify-content-start dashBoardRow" >
+                   <div class="dropdown">
+                        <button type="button"  data-bs-toggle="dropdown" id = 'load' class = 'btn btn-outline-dark dropdown-toggle'>Load folder config</button>
+                        <ul class = 'dropdown-menu' id ='folderDropdown'>
+                            <!-- Configs go here -->
+                        </ul>
+                   </div>
+                   
+                   <div class="dropdown">
+                    <button type="button"  data-bs-toggle="dropdown" id = 'delete' class = 'btn btn-outline-dark dropdown-toggle'>Delete folder config</button>
+                    <ul class = 'dropdown-menu' id ='deleteDropdown'>
+                        <!-- Configs go here -->
+                    </ul>
+                    </div>
+                  
+                   
+ 
+                    <div class="input-group ">
+                        <button id = 'save' class = 'btn btn-outline-dark'>Save folder config</button>
+                        <input type="text"class = 'form-control' id = 'configName' placeholder = 'config name'>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-row justify-content-between dashBoardRow">
+                    <div class="alert alert-primary" id = 'alert'>Alert</div>
+                </div>
+
+                <div class="d-flex flex-row justify-content-between dashBoardRow" >
+                    <h2>Folders</h2>
+                    <button id = 'add' class = 'btn btn-outline-dark'>+ Add Folders</button>
+                </div>
+                <div id = 'selectedFolders' class="list-group dashBoardRow" >
+                </div>
+              
+            </div>
+            
+        </div>
+    </div>
+      
+
+
+
+
+
+    <script src = 'jquery-3.6.0.min.js'> </script>
+    <script src = 'popper.min.js'></script>
+    <script src = 'bootstrap-5.1.1-dist/js/bootstrap.min.js'></script>
+    <script src = 'logic.js'></script>
+  </body>
+
+</html>
